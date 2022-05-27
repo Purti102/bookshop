@@ -6,7 +6,7 @@ const userSchema = require('../models/userModel');
 
 dotenv.config();
 
-console.log("User COntroller Called");
+console.log("User Controller Called");
 
 // user schema
 const userDataCollection = mongoose.model('user', userSchema, 'users');

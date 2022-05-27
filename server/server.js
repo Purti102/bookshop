@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const session = require('express-session');
-const userRoute = require('./routes/userRoutes')
+const userRoute = require('./routes/userRoutes');
+const bookRoute = require('./routes/bookRoutes');
 
 dotenv.config();
 mongoose.connect(
@@ -25,7 +26,12 @@ app.use(session({
 
 app.use(cors());
 
+//router
 app.use(userRoute);
+
+app.use(bookRoute);
+
+
 
 app.use("/", function(req, res){
     res.send("<h1>This is abhi</h1>");
